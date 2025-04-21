@@ -110,14 +110,14 @@ require_once("logica/Medico.php");
 						$especialidades = $especialidad->consultar();
 						echo "<ul>";
 						foreach ($especialidades as $esp) {
-							echo "<li>" . htmlspecialchars($esp->getNombre());
+							echo "<li>" . $esp->getNombre();
 
 							$medicos = Medico::consultarPorEspecialidad($esp->getId());
 
 							if (count($medicos) > 0) {
 								echo "<ul>";
 								foreach ($medicos as $medico) {
-									echo "<li>" . htmlspecialchars($medico->getNombre()) . " " . htmlspecialchars($medico->getApellido()) . "</li>";
+									echo "<li>" . $medico->getNombre() . " " . $medico->getApellido() . "</li>";
 								}
 								echo "</ul>";
 							}
@@ -127,6 +127,7 @@ require_once("logica/Medico.php");
 						echo "</ul>";
 						?>
 					</div>
+
 				</div>
 			</div>
 		</div>
